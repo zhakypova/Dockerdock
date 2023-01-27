@@ -4,3 +4,6 @@ venv/
 .env.prod.db
 .env.prod
 .env.dev
+
+app/entrypoint.prod.sh
+app/entrypoint.sh
