@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  web:
+    build: ./app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app/:/usr/src/app/
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+
+
+  db:
+    image: postgres:15.1
+    ports:
+      - "5432:5455"
+    volumes:
+      - postgres_data:/var/lib/postgres/data/
+    environment:
+      - POSTGRES_DB=development_db
+      - POSTGRES_USER=development_user
+      - POSTGRES_PASSWORD=qweasd!23
+
+volumes:
+  postgres_data:

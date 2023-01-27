@@ -1,0 +1,6 @@
+django==3.2
+djangorestframework
+drf_yasg
+django-filter
+psycopg2-binary
+gunicorn
